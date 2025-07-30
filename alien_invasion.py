@@ -35,7 +35,7 @@ class AlienInvasion:
     def _update_screen(self):
         """更新屏幕上的图像，并切换到新屏幕"""
         self.screen.fill(self.settings.bg_color)
-        self.ship.blitme()
+        self.ship.draw()
         pygame.display.flip()
     
         
