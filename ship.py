@@ -8,14 +8,8 @@ class Ship:
         self.settings = ai_game.settings
         self.screen_rect = self.screen.get_rect()
         # 加载原始飞船图像
-        original_image = pygame.image.load('images/ship.bmp')
-        # 设定缩放比例（例如缩小到原图的 10%）
-        scale_factor = 0.1
-        width = int(original_image.get_width() * scale_factor)
-        height = int(original_image.get_height() * scale_factor)
-        # 缩放图像
-        self.image = pygame.transform.scale(original_image, (width, height))
-        self.rect = self.image.get_rect()
+        self.image = pygame.image.load('images/ship.bmp')
+        self.rect = self.image.get_rect()
         # 将飞船放在屏幕底部中央
         self.rect.midbottom = self.screen_rect.midbottom
         # 在飞船的属性x中存储一个浮点数
