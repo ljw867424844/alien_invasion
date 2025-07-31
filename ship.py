@@ -9,8 +9,8 @@ class Ship:
         self.screen_rect = self.screen.get_rect()
         # 加载原始飞船图像
         original_image = pygame.image.load('images/ship.bmp')
-        # 设定缩放比例（例如缩小到原图的 20%）
-        scale_factor = 0.2
+        # 设定缩放比例（例如缩小到原图的 10%）
+        scale_factor = 0.1
         width = int(original_image.get_width() * scale_factor)
         height = int(original_image.get_height() * scale_factor)
         # 缩放图像
@@ -36,6 +36,6 @@ class Ship:
         # 根据据self.x更新rect对象
         self.rect.x = self.x
         
-    def draw(self):
+    def draw_ship(self):
         """在指定位置绘制飞船"""
         self.screen.blit(self.image, self.rect)
