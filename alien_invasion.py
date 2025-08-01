@@ -99,10 +99,8 @@ class AlienInvasion:
     def _start_game(self):
         """开始新游戏时初始化设置"""
         self.stats.reset_stats()
-        self.sb.prep_score()
-        self.sb.prep_level()
-        self.sb.prep_ships()
         self.game_active = True
+        self.sb.prep_images()
 
         # 清空敌人和子弹
         self.bullets.empty()
@@ -125,6 +123,15 @@ class AlienInvasion:
             sleep(0.5)
         else:
             self.game_active = False
+
+    def _start_new_level(self):
+        """清完一波舰队进入新等级"""
+        self.bullets.empty()
+        self._create_fleet()
+        self.settings.increase_speed()
+
+        self.stats.level += 1
+        self.sb.prep_level()
 
     # ------------------ 子弹处理 ------------------
 
@@ -154,12 +161,7 @@ class AlienInvasion:
             self.sb.check_high_score()
 
         if not self.aliens:
-            self.bullets.empty()
-            self._create_fleet()
-            self.settings.increase_speed()
-
-            self.stats.level += 1
-            self.sb.prep_level()
+            self._start_new_level()
 
     # ------------------ 外星人处理 ------------------
 

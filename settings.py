@@ -23,10 +23,10 @@ class Settings:
         self.fleet_direction = 1  # 1 表示向右，-1 表示向左
 
         # 游戏节奏加速比例
-        self.speedup_scale = 1.8
+        self.speedup_scale = 1.5
 
         # 外星人得分增长比例
-        self.score_scale = 1.5
+        self.score_scale = 2
 
         self.initialize_dynamic_settings()
 
